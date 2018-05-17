@@ -1,5 +1,5 @@
-// import Worker from './rpc-like.worker.js';
-const Worker = require('./rpc-like.worker.js');
+import Worker from './rpc-like.worker.js';
+// const Worker = require('./rpc-like.worker.js');
 
 // https://gist.github.com/605541#file_js_web_worker_pool.js,
 // https://gist.github.com/kig/1188381
@@ -27,6 +27,7 @@ export default class WorkerPool {
   // url: the url of the worker fn
   // msg: the initial message to pass to the worker
   queueJob(url, msg) {
+    console.log('queueJob')
     const newId = ++this.globalMsgId;
     var job = {
         "url": url,

@@ -14,10 +14,12 @@ class App extends Component {
   failure = e => console.log('random failure:', e.message)
 
   meh = () => { 
+    console.log('meh')
     this.wp.queueJob('meh', [ 'who cares?' ]).then(this.success).catch(this.failure) 
   }
 
   hello = () => { 
+    console.log('hello')
     this.wp.queueJob('hello', [ 'i love you' ]).then(this.success).catch(this.failure) 
   }
 

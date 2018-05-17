@@ -5,7 +5,7 @@ module.exports = {
     if (!isServer){
       cfg.module.rules.push({
         test: /\.worker\.js$/,
-        loader: ['worker-loader']
+        use: ['worker-loader', 'babel-loader']
       })
     }
 
