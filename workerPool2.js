@@ -8,6 +8,7 @@ import Worker from './rpc-like.worker.js';
 export default class WorkerPool {
 
   constructor(size){
+    console.log('WorkerPool constructor')
     this.size = size || 4;
     this.pool = [];
     this.jobs = [];
@@ -44,7 +45,7 @@ export default class WorkerPool {
   }
 
   nextJob() {
-
+      console.log('nextJob')
       if (this.jobs.length && this.pool.length) {
 
         const worker = this.pool.shift();

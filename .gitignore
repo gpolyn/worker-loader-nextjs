@@ -8,6 +8,7 @@ dist
 node_modules/
 package-lock.json
 config.json
+npm-debug.log
 
 
 # Swap

@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
-// import logo from '../static/logo.svg';
-import WorkerPool from '../workerPool2';
 
 class App extends Component {
 
+  static getInitialProps(ctx) {  
+    return {isBrowser: process.browser, fart: 'fart'}
+  }
+
   constructor(props) {
     super(props);
+  }
+
+  componentDidMount () {
+    console.log(this.props)
+    const WorkerPool = require('../workerPool2').default;
     this.wp = new WorkerPool(2);
   }
 
@@ -14,7 +21,7 @@ class App extends Component {
   failure = e => console.log('random failure:', e.message)
 
   meh = () => { 
-    console.log('meh')
+    console.log('meh', this.props.isBrowser)
     this.wp.queueJob('meh', [ 'who cares?' ]).then(this.success).catch(this.failure) 
   }
 
