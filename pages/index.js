@@ -11,7 +11,6 @@ class App extends Component {
   }
 
   componentDidMount () {
-    console.log(this.props)
     const WorkerPool = require('../workerPool2').default;
     this.wp = new WorkerPool(2);
   }
@@ -21,12 +20,10 @@ class App extends Component {
   failure = e => console.log('random failure:', e.message)
 
   meh = () => { 
-    console.log('meh', this.props.isBrowser)
     this.wp.queueJob('meh', [ 'who cares?' ]).then(this.success).catch(this.failure) 
   }
 
   hello = () => { 
-    console.log('hello')
     this.wp.queueJob('hello', [ 'i love you' ]).then(this.success).catch(this.failure) 
   }
 
