@@ -2,16 +2,8 @@ import React, { Component } from 'react';
 
 class App extends Component {
 
-  static getInitialProps(ctx) {  
-    return {isBrowser: process.browser, fart: 'fart'}
-  }
-
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount () {
-    const WorkerPool = require('../workers/workerPool2').default;
+    const WorkerPool = require('../workers/workerPool').default;
     this.wp = new WorkerPool(2);
   }
 
