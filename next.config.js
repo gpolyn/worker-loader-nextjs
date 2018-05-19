@@ -1,6 +1,7 @@
-module.exports = {
+const withSourceMaps = require('@zeit/next-source-maps');
+module.exports = withSourceMaps({
 
-  webpack: function (cfg, {isServer}) {
+  webpack(cfg, {isServer}){
 
     if (!isServer){
       cfg.module.rules.push({
@@ -12,4 +13,4 @@ module.exports = {
     return cfg
   }
 
-}
+})

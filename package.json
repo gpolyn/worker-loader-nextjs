@@ -4,7 +4,7 @@
   "description": "Next.js + worker-loader",
   "main": "index.js",
   "scripts": {
-		"dev": "next",
+    "dev": "next",
     "build": "next build",
     "start": "next start"
   },
@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/gpolyn/worker-loader-nextjs#readme",
   "dependencies": {
+    "@zeit/next-source-maps": "0.0.2",
     "next": "6.0.3",
     "react": "16.3.2",
     "react-dom": "16.3.2",
