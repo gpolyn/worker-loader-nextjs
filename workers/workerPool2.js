@@ -1,5 +1,4 @@
-// import Worker from './rpc-like.worker.js';
-import Worker from 'worker-loader?name=dist/blah.worker.js&inline=true!./rpc-like.worker.js';
+import Worker from 'worker-loader?inline=true!./rpc-like.worker.js';
 
 // https://gist.github.com/605541#file_js_web_worker_pool.js,
 // https://gist.github.com/kig/1188381

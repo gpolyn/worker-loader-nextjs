@@ -12,7 +12,6 @@ class App extends Component {
 
   componentDidMount () {
     const WorkerPool = require('../workers/workerPool2').default;
-    // const WorkerPool = require('/workers/workerPool2').default;
     this.wp = new WorkerPool(2);
   }
 
